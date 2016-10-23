@@ -46,6 +46,7 @@ class Video extends Audio
         $this->filters->add($filter);
 
         return $this;
+
     }
 
     /**
@@ -105,7 +106,13 @@ class Video extends Audio
             $commands[] = '-qdiff';
             $commands[] = '4';
             $commands[] = '-trellis';
-            $commands[] = '1';
+            $commands[] = '1';     
+            $commands[] = '-profile:v';
+            $commands[] = 'baseline';
+            $commands[] = '-level';
+            $commands[] = '3.0';
+            $commands[] = '-movflags';
+            $commands[] = '+faststart';
         }
 
         if ($format instanceof AudioInterface) {
